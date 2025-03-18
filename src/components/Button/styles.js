@@ -6,6 +6,7 @@ export const ButtonContainer = styled.button `
     position: relative;
 
     color: #FFF;
+    font-family: 'Open Sans';
     padding: 2px 12px;
     min-width: 128px;
     width: 100%;
@@ -13,8 +14,14 @@ export const ButtonContainer = styled.button `
     ${({variant}) => variant !== "primary" && css `
         min-width: 167px;
         height: 33px;
+        font-family: 'Open Sans';
+
 
         background: #E4105D;
+        &:hover {
+            opacity: 0.6;
+            cursor:pointer;
+        }
 
         &::after {
             content:'';
@@ -22,7 +29,7 @@ export const ButtonContainer = styled.button `
             border: 1px solid #E4105D;
             top: -5px;
             left: -6px;
-            width: calc(100% - 10px);
+            width: 102%;
             height: calc(100% + 10px);
             border-radius: 22px;
         }

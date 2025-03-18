@@ -9,7 +9,7 @@ export const Container = styled.div `
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin 0 auto;
+    margin: 0 auto;
 `
 
 export const Row = styled.div `
@@ -32,10 +32,6 @@ export const Wrapper = styled.div `
     justify-content: center;
     align-items: center;
 `
-export const Logo = styled.img `
-    width: 1rem;
-    <img src={logo} alt="logo Dio"/>
-`
 
 export const BuscarInputContainer = styled.div `
     width: 175px;
@@ -52,7 +48,7 @@ export const BuscarInputContainer = styled.div `
 
 export const Menu = styled.a `
     font-family: 'Open Sans';
-    font-styled: normal;
+    font-style: normal;
     font-size: 12px;
     line-height: 25px;
     color: #FFF;
@@ -62,7 +58,7 @@ export const Menu = styled.a `
 
 export const MenuRight = styled.a `
     font-family: 'Open Sans';
-    font-styled: normal;
+    font-style: normal;
     font-size: 12px;
     line-height: 25px;
     color: #FFF;
