@@ -54,6 +54,7 @@ export const Menu = styled.a `
     color: #FFF;
     margin-right: 12px;
     text-decoration: none;
+    text-transform: uppercase;
 `
 
 export const MenuRight = styled.a `
@@ -64,6 +65,8 @@ export const MenuRight = styled.a `
     color: #FFF;
     margin-right: 12px;
     text-decoration: none;
+    text-transform: uppercase;
+
 `
 
 export const UserPicture = styled.img `
