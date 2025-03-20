@@ -56,7 +56,7 @@ ${({variant}) => variant ==="tertiary" && css `
     padding: 2px 6px;
     border:none;
     width: 30px;
-    margin-bottom: 15px;
+    margin-right: 15px;
 
 
     &:hover {

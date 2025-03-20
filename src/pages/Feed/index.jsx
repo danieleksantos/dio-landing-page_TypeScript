@@ -1,5 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import {Button} from "../../components/Button"
+
 import { Header } from "../../components/Header";
 import { Container, Column, Title, TitleHightLight } from "./styles"
 import { Card } from "../../components/Card"
@@ -7,16 +6,10 @@ import { UserInfo } from "../../components/UserInfo"
 
 
 const Feed = () => {
-    const navigate = useNavigate();
-    
-    const handleClickSignIn = () => {
-        navigate('/')
-    }
     return (<>
         <Header autenticado={true}/>
         <Container>
             <Column flex={3}>
-                <Button title={"Voltar"} variant="tertiary" onClick={handleClickSignIn} />
                 <Title>Feed</Title>
                 <Card />
                 <Card />

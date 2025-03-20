@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../Button";
-import logo from "../../assets/logo-mini.png"
+import logo from "../../assets/logo-mini.png";
 
 import {
     BuscarInputContainer,
@@ -20,6 +20,11 @@ const Header = ({autenticado}) => {
         const handleClickSignIn = () => {
             navigate('/feed')
         }
+        const navigateOut = useNavigate();
+    
+    const handleClickSignOut = () => {
+        navigateOut('/')
+    }
     return (
         <Wrapper>
             <Container>
@@ -37,9 +42,12 @@ const Header = ({autenticado}) => {
                    
                 </Row>
                 <Row>
-                {autenticado ? (
-                    <UserPicture src="https://avatars.githubusercontent.com/u/182745977?v=4" />
-                ) : (
+                {autenticado ? ( 
+                    <>
+                        <Button title={"Sair"} variant="tertiary" onClick={handleClickSignOut} />
+                        <UserPicture src="https://avatars.githubusercontent.com/u/182745977?v=4" />
+                    </>
+                    ) : (
                     <>
                     <MenuRight href="#">
                         Home 
