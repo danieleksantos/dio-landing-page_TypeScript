@@ -1,10 +1,10 @@
-# Dio Landing Page - REACT
+# Dio Landing Page - REACT 🚀
 
-## Descrição
+## 🎯 Descrição e Objetivo
 
 Este projeto é uma **landing page** desenvolvida com **React** com o objetivo de praticar a utilização de **styled-components** para a estilização e **React Router** para navegação entre seções da página. A página foi criada para ser uma introdução envolvente aos cursos e conteúdo oferecidos pela Digital Innovation One (DIO), apresentando uma interface simples e funcional com componentes reutilizáveis.
 
-## 🔧 Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - **React**: Biblioteca JavaScript para construir interfaces de usuário.
 - **styled-components**: Biblioteca para estilização de componentes em React, permitindo uma abordagem mais modular e reutilizável.
