@@ -7,6 +7,7 @@ export const ButtonContainer = styled.button `
 
     color: #FFF;
     font-family: 'Open Sans';
+    font-size: 14px;
     padding: 2px 12px;
     min-width: 128px;
     width: 100%;
@@ -19,10 +20,11 @@ export const ButtonContainer = styled.button `
         cursor:pointer;
     }
 
-    ${({variant}) => variant !== "primary" && css `
+    ${({variant}) => variant ==="secundary" && css `
         min-width: 167px;
         height: 33px;
         font-family: 'Open Sans';
+        font-size: 14px;
         border:none;
 
 
@@ -42,5 +44,24 @@ export const ButtonContainer = styled.button `
             height: calc(100% + 10px);
             border-radius: 22px;
         }
+    `}
+
+${({variant}) => variant ==="tertiary" && css `
+    background: #565656;
+    border-radius: 22px;
+
+    color: #FFF;
+    font-family: 'Open Sans';
+    font-size: 12px;
+    padding: 2px 6px;
+    border:none;
+    width: 30px;
+    margin-bottom: 15px;
+
+
+    &:hover {
+        opacity: 0.6;
+        cursor:pointer;
+    }
     `}
 `

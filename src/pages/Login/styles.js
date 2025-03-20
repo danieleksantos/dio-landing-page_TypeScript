@@ -14,6 +14,8 @@ export const Container = styled.main `
 
     export const Wrapper = styled.div `
         max-width: 300px;
+        margin-left: 100px;
+        margin-bottom: 35px;
     `
 
     export const Column = styled.div `
@@ -32,11 +34,12 @@ export const Container = styled.main `
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: 700;
-        font-size: 32px;
+        font-size: 28px;
         width: 320px;
         margin-bottom: 20px;
         line-height: 44px;
         color: #FFF;
+        text-align: justify;
     `
 
 export const TitleLogin = styled.p `
