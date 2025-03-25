@@ -1,12 +1,28 @@
 import {MdEmail, MdLock} from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
-import {Column, Container, CriarText, EsqueciText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
-import { CgPassword } from 'react-icons/cg';
+import { api } from '../../services/api';
 
+import {Column, Container, CriarText, EsqueciText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
+// import { CgPassword } from 'react-icons/cg';
+
+const schema = yup
+  .object({
+    email: yup
+    .string()
+    .email('E-mail inválido')
+    .required('E-mail obrigatório'),
+    password: yup
+    .string()
+    .min(3, 'No mínimo 3 caracteres')
+    .required('Senha obrigatória')
+  })
+  .required()
 
 
 const Login = () => {
@@ -15,13 +31,26 @@ const Login = () => {
     const {
         control,
         handleSubmit,
-        formState: { errors, isValid },
-      } = useForm();
-      const onSubmit = data => console.log(data)
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(schema), 
+        mode: 'onChange',
+    });
 
-    const handleClickSignIn = () => {
-        navigate('/feed')
+    const onSubmit = async formdata => {
+        try{
+            const {data} = await api.get(`users?email=${formdata.email}&senha=${formdata.password}`);
+            if (data.length ===1) {
+                navigate('/feed')
+            } else {
+                alert('Email ou senha inválido')
+            }
+        }catch{
+            alert('Houve um erro. Tente novamente!')
+        }
     }
+
+    
     return (<>
         <Header />
         <Container>
@@ -39,8 +68,8 @@ const Login = () => {
                         Faça seu login e make the change._
                     </SubTitleLogin>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <Input name="email" control={control} placeholder="E-mail" leftIcon={<MdEmail />}/>
-                        <Input name="Password" control={control} placeholder="Senha" type="password" leftIcon={<MdLock />}/>
+                        <Input name="email" control={control} placeholder="E-mail" errorMessage={errors?.email?.message} leftIcon={<MdEmail />}/>
+                        <Input name="password" errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />}/>
                         <Button type="submit" title="Entrar" variant="secundary"/>
                     </form>
                     <Row>
