@@ -47,17 +47,25 @@ const Register = () => {
     
         const onSubmit = async (formData) => {
             try {
+                // Verifica se o e-mail já está em uso
+                const emailResponse = await api.get(`/users?email=${formData.email}`);
+        
+                // Se a resposta não for vazia (usuário encontrado), exibe mensagem de erro
+                if (emailResponse.data.length > 0) {
+                    alert('E-mail já cadastrado. Tente outro e-mail.');
+                    return;
+                }
                 const response = await api.post('/users', {
                     name: formData.fullName,
                     email: formData.email,
                     password: formData.password,
                 });
-
+        
                 if (response.status === 201) {
                     alert('Cadastro realizado com sucesso!');
                     navigate('/login'); 
                 }
-
+        
             } catch (error) {
                 console.error('Erro ao cadastrar usuário:', error);
                 alert('Erro ao cadastrar. Tente novamente.');

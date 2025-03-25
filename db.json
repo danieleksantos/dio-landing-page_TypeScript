@@ -29,6 +29,12 @@
       "name": "teste joao",
       "email": "teste@joao",
       "password": "123456"
+    },
+    {
+      "id": "31ff",
+      "name": "teste joao",
+      "email": "teste@joaozinho",
+      "password": "123456"
     }
   ]
 }
