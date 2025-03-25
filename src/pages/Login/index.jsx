@@ -8,8 +8,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { api } from '../../services/api';
 
-import {Column, Container, CriarText, EsqueciText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
-// import { CgPassword } from 'react-icons/cg';
+import {Column, Container, RegisterAccount, EsqueciText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
 
 const schema = yup
   .object({
@@ -27,7 +26,9 @@ const schema = yup
 
 const Login = () => {
     const navigate = useNavigate();
-
+    const handleClickRegister = () => {
+        navigate('/register')
+    }
     const {
         control,
         handleSubmit,
@@ -76,9 +77,9 @@ const Login = () => {
                         <EsqueciText>
                             Esqueci Minha Senha
                         </EsqueciText>
-                        <CriarText>
+                        <RegisterAccount onClick={handleClickRegister}>
                             Criar Conta
-                        </CriarText>
+                        </RegisterAccount>
                     </Row>
                 </Wrapper>
             </Column>

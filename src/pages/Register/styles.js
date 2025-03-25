@@ -4,7 +4,7 @@ export const Container = styled.main `
     width: 100%;
     max-width: 80%;
     margin: 0 auto;
-    margin-top: 120px;
+    margin-top: 70px;
 
     display: flex;
     flex-direction: row;
@@ -29,17 +29,16 @@ export const Container = styled.main `
         margin-top: 20px;
     `
 
-
     export const Title = styled.h2 `
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: 700;
-        font-size: 28px;
-        width: 320px;
+        font-size: 32px;
+        width: 388px;
         margin-bottom: 20px;
         line-height: 44px;
         color: #FFF;
-        text-align: justify;
+        text-align: left;
     `
 
 export const TitleLogin = styled.p `
@@ -59,7 +58,27 @@ export const SubTitleLogin = styled.p `
     line-height: 25px;
 `
 
-export const EsqueciText = styled.h2 `
+export const PermitionText = styled.h2 `
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #FFF;
+`
+
+export const AccountExist = styled.p `
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #FFF;
+`
+
+export const Login = styled.a`
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 700;
@@ -67,16 +86,6 @@ export const EsqueciText = styled.h2 `
     line-height: 19px;
 
     color: #E5E044;
-`
-
-export const RegisterAccount = styled.a `
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19px;
-
-    color: #E23DD7;
 
     &:hover {
         cursor: pointer;

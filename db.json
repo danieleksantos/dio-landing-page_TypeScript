@@ -1,6 +1,34 @@
 {
-    "users": [
-        { "id": 1, "name": "Daniele", "email": "daniele@daniele.com", "senha": "123456" },
-        { "id": 2, "name": "Thais", "email": "thais@thais.com", "senha": "123456" }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "name": "Daniele",
+      "email": "daniele@daniele.com",
+      "senha": "123456"
+    },
+    {
+      "id": "2",
+      "name": "Thais",
+      "email": "thais@thais.com",
+      "senha": "123456"
+    },
+    {
+      "id": "ffca",
+      "name": "Teste",
+      "email": "teste@email.com",
+      "password": "123"
+    },
+    {
+      "id": "1a40",
+      "name": "teste joao",
+      "email": "teste@joao",
+      "password": "123456"
+    },
+    {
+      "id": "1411",
+      "name": "teste joao",
+      "email": "teste@joao",
+      "password": "123456"
+    }
+  ]
 }

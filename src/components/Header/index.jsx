@@ -16,15 +16,20 @@ import {
 
 const Header = ({autenticado}) => {
     const navigate = useNavigate();
+    const handleClickSignIn = () => {
+        navigate('/login')
+    }
     
-        const handleClickSignIn = () => {
-            navigate('/feed')
-        }
-        const navigateOut = useNavigate();
-    
+    const navigateOut = useNavigate();
     const handleClickSignOut = () => {
         navigateOut('/')
     }
+
+    const navigateRegister = useNavigate();
+    const handleClickRegister = () => {
+        navigateRegister('/register')
+    }
+
     return (
         <Wrapper>
             <Container>
@@ -53,7 +58,7 @@ const Header = ({autenticado}) => {
                         Home 
                     </MenuRight>
                     <Button title="Entrar" onClick={handleClickSignIn}/>
-                    <Button title="Cadastrar"/>
+                    <Button title="Cadastrar" onClick={handleClickRegister}/>
                     </>
                 )}                    
                 </Row>

@@ -7,7 +7,6 @@ import bannerImage from "../../assets/banner.png"
 
 const Home = () => {
     const navigate = useNavigate();
-
     const handleClickSignIn = () => {
         navigate('/login')
     }
