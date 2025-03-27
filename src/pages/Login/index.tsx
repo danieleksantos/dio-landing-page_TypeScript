@@ -9,6 +9,7 @@ import { Input } from "../../components/Input";
 import { api } from '../../services/api';
 
 import {Column, Container, RegisterAccount, EsqueciText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
+import { IFormData } from './types';
 
 const schema = yup
   .object({
@@ -33,12 +34,12 @@ const Login = () => {
         control,
         handleSubmit,
         formState: { errors },
-    } = useForm({
+    } = useForm<IFormData>({
         resolver: yupResolver(schema), 
         mode: 'onChange',
     });
 
-    const onSubmit = async formdata => {
+    const onSubmit = async (formdata: IFormData) => {
         try{
             const {data} = await api.get(`users?email=${formdata.email}&senha=${formdata.password}`);
             if (data.length ===1) {

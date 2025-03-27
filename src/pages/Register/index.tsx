@@ -9,6 +9,7 @@ import { Input } from "../../components/Input";
 import { api } from '../../services/api';
 
 import {Column, Container, Row, SubTitleLogin, Title, TitleLogin, Wrapper, PermitionText, AccountExist, Login } from "./styles";
+import { IFormData } from '../Login/types';
 
 const schema = yup
 .object({
@@ -45,7 +46,7 @@ const Register = () => {
             }
         });
     
-        const onSubmit = async (formData) => {
+        const onSubmit = async (formData: IFormData) => {
             try {
                 // Verifica se o e-mail já está em uso
                 const emailResponse = await api.get(`/users?email=${formData.email}`);
