@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../Button";
 import logo from "../../assets/logo-mini.png";
 
@@ -13,30 +13,28 @@ import {
     UserPicture,
     Wrapper
 } from './styles'
-import { IHeader } from "./types";
+import { useAuth } from "../../hooks/useAuth";
 
-const Header = ({autenticado}: IHeader) => {
+const Header = () => {
+    const {user, handleSignOut} =  useAuth();
+    
     const navigate = useNavigate();
     const handleClickSignIn = () => {
         navigate('/login')
     }
-    
-    const navigateOut = useNavigate();
-    const handleClickSignOut = () => {
-        navigateOut('/')
-    }
 
-    const navigateRegister = useNavigate();
     const handleClickRegister = () => {
-        navigateRegister('/register')
+        navigate('/register')
     }
 
     return (
         <Wrapper>
             <Container>
                 <Row>
-                    <img src={logo} alt="logo Dio"/>
-                    {autenticado ? (
+                    <Link to="/">
+                        <img src={logo} alt="logo Dio"/>
+                    </Link>
+                    {user.id ? (
                     <>
                         <BuscarInputContainer>
                             <Input placeholder="Buscar..."/>
@@ -48,9 +46,9 @@ const Header = ({autenticado}: IHeader) => {
                    
                 </Row>
                 <Row>
-                {autenticado ? ( 
+                {user.id ? ( 
                     <>
-                        <Button title={"Sair"} variant="tertiary" onClick={handleClickSignOut} />
+                        <Button title={"Sair"} variant="tertiary" onClick={handleSignOut} />
                         <UserPicture src="https://avatars.githubusercontent.com/u/182745977?v=4" />
                     </>
                     ) : (

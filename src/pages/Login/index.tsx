@@ -6,10 +6,10 @@ import * as yup from "yup";
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
-import { api } from '../../services/api';
 
 import {Column, Container, RegisterAccount, EsqueciText, Row, SubTitleLogin, Title, TitleLogin, Wrapper } from "./styles";
 import { IFormData } from './types';
+import { useAuth } from '../../hooks/useAuth';
 
 const schema = yup
   .object({
@@ -30,6 +30,9 @@ const Login = () => {
     const handleClickRegister = () => {
         navigate('/register')
     }
+
+    const {handleLogin} =  useAuth();
+    
     const {
         control,
         handleSubmit,
@@ -40,17 +43,8 @@ const Login = () => {
     });
 
     const onSubmit = async (formdata: IFormData) => {
-        try{
-            const {data} = await api.get(`users?email=${formdata.email}&senha=${formdata.password}`);
-            if (data.length ===1) {
-                navigate('/feed')
-            } else {
-                alert('Email ou senha inválido')
-            }
-        }catch{
-            alert('Houve um erro. Tente novamente!')
-        }
-    }
+        handleLogin(formdata);
+    };
 
     
     return (<>
