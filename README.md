@@ -16,4 +16,4 @@ A página foi criada para ser uma introdução envolvente aos cursos e conteúdo
 - **Tela de Cadastro**: Nova funcionalidade adicionada, permitindo que os usuários se cadastrem através de um formulário intuitivo e estilizado com **styled-components**.  
 
 ## 🔗 Deploy  
-A página está disponível online! Você pode acessá-la através do seguinte link: [Dio Landing Page - React](#)  
+A página está disponível online! Você pode acessá-la através do seguinte link: [Dio Landing Page - React](https://danieleksantos.github.io/dio-landing-page_TypeScript/)  
